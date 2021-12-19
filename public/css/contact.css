@@ -1,0 +1,152 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+}
+
+h1 {
+  font-size: 25px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+span,
+label,
+input {
+  display: inline-block;
+}
+
+div {
+  padding: 7px;
+}
+
+.h-adr {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.example {
+  color: #c7c7c7;
+}
+
+/* ----------見出し部分---------- */
+
+.form-title,
+.form-title-required {
+  font-weight: bold;
+  width: 150px;
+}
+
+.form-title-required::after {
+  content: " ※";
+  color: red;
+  vertical-align: top;
+}
+
+/* ----------入力部分---------- */
+
+input {
+  height: 40px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+}
+
+#last-name,
+#first-name {
+  width: 38.3%;
+}
+
+.gender input {
+  width: 50px;
+}
+
+.gender label:first-of-type {
+  margin-right: 30px;
+}
+
+#email,
+#address,
+#building_name,
+#opinion {
+  width: 77%;
+}
+
+#postcode {
+  width: 70.2%;
+}
+
+textarea {
+  vertical-align: top;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+/* ----------ボタン---------- */
+
+.confirm {
+  text-align: center;
+  padding-top: 30px;
+}
+
+button {
+  width: 130px;
+  height: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+/* ----------例・エラー（Laravelバリデーション）表示部分---------- */
+
+.subform-title {
+  width: 150px;
+}
+
+.subform-postcode {
+  width: 200px;
+}
+
+.error-message {
+  color: red;
+  margin-left: 10px;
+}
+
+/* ----------リアルタイム入力チェック（javascript）---------- */
+
+.real-check {
+  display: none;
+  color: red;
+  margin-left: 10px;
+}
+
+.visible {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ----------姓部分---------- */
+
+.raraError {
+  width: 25px;
+}
+
+.jsError {
+  width: 215px;
+}
+
+.widChange {
+  width: 25px;
+}

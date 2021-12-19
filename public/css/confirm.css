@@ -1,0 +1,78 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+}
+
+h1 {
+  font-size: 25px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+span,
+label,
+input {
+  display: inline-block;
+}
+
+div {
+  padding: 7px 7px 60px 7px;
+}
+
+a {
+  color: #000000;
+}
+
+.contact-form {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* ----------------内容確認部分---------------- */
+.form-title {
+  font-weight: bold;
+  width: 150px;
+}
+
+input {
+  height: 40px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+}
+
+.opinion {
+  width: 70%;
+  vertical-align: top;
+  line-height: 25px;
+}
+
+/* ----------------ボタン部分----------------- */
+.confirm {
+  text-align: center;
+  padding-top: 30px;
+}
+
+button {
+  width: 130px;
+  height: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button:nth-of-type(2) {
+  color: black;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}

@@ -1,0 +1,176 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 25px;
+  padding: 30px 0;
+  text-align: center;
+}
+
+span,
+label,
+input {
+  display: inline-block;
+}
+
+div:not(.confirm, .table-page) {
+  margin-bottom: 30px;
+}
+
+.form-content {
+  border: 1px solid #000;
+  width: 90%;
+  margin: 0 auto 50px;
+  padding: 50px 70px 10px 70px;
+}
+
+.form-table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* ----------------見出し部分---------------- */
+.title {
+  font-weight: bold;
+  width: 150px;
+}
+
+.title-gender {
+  font-weight: bold;
+  width: 50px;
+  margin-left: 50px;
+}
+
+/* ----------------入力部分---------------- */
+input {
+  width: 250px;
+  height: 50px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+}
+
+input[name="gender"] {
+  width: 70px;
+  height: 40px;
+}
+
+/* ----------------テーブル部分---------------- */
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+th {
+  border-bottom: 1px solid #000;
+}
+
+th,
+td {
+  padding: 10px 30px;
+  word-break: break-all;
+}
+
+tr {
+  height: 60px;
+}
+
+.table-id {
+  width: 100px;
+}
+
+.table-name {
+  width: 150px;
+}
+
+.table-gender {
+  width: 100px;
+}
+
+.table-email {
+  width: 350px;
+}
+
+.opinion {
+  display: block;
+  width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.opinion:hover {
+  white-space: normal;
+  width: 700px;
+}
+
+.delete {
+  text-align: right;
+}
+
+table button {
+  width: 80px;
+  height: 30px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+/* ----------------ボタン---------------- */
+.confirm {
+  text-align: center;
+}
+
+.form-content button {
+  width: 130px;
+  height: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-content button:nth-of-type(2) {
+  color: black;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+/* -------------ページネーション------------- */
+.table-page {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.pagination li {
+  display: block;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  float: left;
+}
+
+.pagination li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.pagination .active {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+
+.pagination li:hover:not(.active, .disabled) {
+  background-color: #ddd;
+}

@@ -1,0 +1,33 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thanks {
+  text-align: center;
+}
+
+.thanks div {
+  margin-bottom: 80px;
+}
+
+button {
+  width: 130px;
+  height: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+}
