@@ -71,6 +71,8 @@
         <form action="{{ route('form.delete') }}" method="POST">
           @csrf
           <tr>
+            <input type="hidden" name="firstPage" value="{{ $forms->url(1) }}">
+            <input type="hidden" name="currentPage" value="{{ $forms->currentPage() }}">
             <td><input type="hidden" name="id" value="{{ $form->id }}">{{ $form->id }}</td>
             <td>{{ $form->fullname }}</td>
             <td>

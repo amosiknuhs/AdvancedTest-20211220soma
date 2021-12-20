@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
-use Illuminate\Pagination\Paginator;
 use App\Http\Requests\ClientRequest;
-
 
 class ContactController extends Controller
 {
@@ -41,6 +39,7 @@ class ContactController extends Controller
   }
   public function search(Request $request)
   {
+    // 検索ボタン押下後、検索条件に入力した値は保持するかは悩みましたが、リセットすることにしました。
     // 検索条件が「全て入力しなくてもよい」なので、複雑になってしまった。改善余地あり。
     unset($request['_token']);
     if ($request->gender == '0') {
@@ -76,7 +75,6 @@ class ContactController extends Controller
         ->whereDate('created_at', '<=', "{$request->created_to}")
         ->where('email', 'LIKE', "%{$request->email}%")
         ->paginate(10);
-      // ddd($result);
       return view('management', ['forms' => $result]);
     } elseif ($request->created_from !== null && $request->created_to == null) {
       $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
@@ -84,14 +82,12 @@ class ContactController extends Controller
         ->whereDate('created_at', '>=', "{$request->created_from}")
         ->where('email', 'LIKE', "%{$request->email}%")
         ->paginate(10);
-      // ddd($result);
       return view('management', ['forms' => $result]);
     } elseif ($request->created_from == null && $request->created_to == null) {
       $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
         ->where('gender', $request->gender)
         ->where('email', 'LIKE', "%{$request->email}%")
         ->paginate(10);
-      // ddd($result);
       return view('management', ['forms' => $result]);
     } else {
       $result = Contact::where('fullname', 'LIKE', "%{$request->fullname}%")
@@ -100,16 +96,17 @@ class ContactController extends Controller
         ->whereDate('created_at', '>=', "{$request->created_from}")
         ->where('email', 'LIKE', "%{$request->email}%")
         ->paginate(10);
-      // ddd($result);
       return view('management', ['forms' => $result]);
     }
   }
   public function delete(Request $request)
   {
-    ddd($request);
+    // ユーザビリティの観点から、削除ボタン押下後前のページに戻り同様の検索結果が表示されるよう処理
     Contact::find($request->id)->delete();
-    //何かしらの検索結果を入れなければエラーとなるため、検索結果0となるように検索
-    $result = Contact::where('fullname', "")->paginate(10);
-    return view('management', ['forms' => $result]);
+    if ($request->currentPage == 1) {
+      return redirect($request->firstPage);
+    } else {
+      return back();
+    }
   }
 }
